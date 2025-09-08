@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { FaBrain, FaComments, FaUsers, FaLock } from "react-icons/fa";
+import FadeInSection from "./FadeInSection";
 
 export default function AboutSection() {
   return (
-    <section id="sobre-mi" className="px-4 py-14">
+    <FadeInSection id="sobre-mi" className="px-4 py-14">
       <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 items-center">
         <div className="justify-self-center md:justify-self-start">
           <Image src="/leaf.png" alt="Hoja" width={360} height={360} />
@@ -49,6 +50,6 @@ export default function AboutSection() {
           </ul>
         </div>
       </div>
-    </section>
+    </FadeInSection>
   );
 }

@@ -1,8 +1,9 @@
 import Image from "next/image";
+import FadeInSection from "./FadeInSection";
 
 export default function HeroSection() {
   return (
-    <section id="inicio" className="bg-[#F3E8E2] py-16 px-4">
+    <FadeInSection id="inicio" className="bg-[#F3E8E2] py-16 px-4">
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 items-center">
         <div>
           <h1 className="text-3xl md:text-5xl font-semibold leading-tight mb-4">
@@ -25,6 +26,6 @@ export default function HeroSection() {
           <Image src="/hero.png" alt="Ilustración" width={320} height={320} />
         </div>
       </div>
-    </section>
+    </FadeInSection>
   );
 }

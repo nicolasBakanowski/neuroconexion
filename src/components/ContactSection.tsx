@@ -1,10 +1,11 @@
 import Image from "next/image";
+import FadeInSection from "./FadeInSection";
 
 const WHATSAPP_BASE = "https://wa.me/5493582446357?text=";
 
 export default function ContactSection() {
   return (
-    <section id="contacto" className="px-4 py-16">
+    <FadeInSection id="contacto" className="px-4 py-16">
       <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 items-center">
         <div>
           <h2 className="text-2xl font-semibold mb-4">
@@ -28,6 +29,6 @@ export default function ContactSection() {
           <Image src="/hero2.png" alt="Ilustración" width={320} height={320} />
         </div>
       </div>
-    </section>
+    </FadeInSection>
   );
 }
