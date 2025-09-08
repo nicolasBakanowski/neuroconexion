@@ -87,52 +87,50 @@ export default function Navbar() {
         </div>
 
         {/* Mobile menu */}
-        <div
-          className={`md:hidden overflow-hidden transition-all duration-300 ${
-            open ? "max-h-screen" : "max-h-0"
-          }`}
-        >
-          <div className="flex flex-col gap-3 py-4">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="rounded-full border border-[#D8CABB] bg-white/70 px-4 py-2 text-sm text-[#4A3B37] shadow-sm transition-colors hover:bg-[#4A3B37] hover:text-[#F5F0E8]"
+        {open && (
+          <div className="md:hidden">
+            <div className="flex flex-col gap-3 py-4">
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="rounded-full border border-[#D8CABB] bg-white/70 px-4 py-2 text-sm text-[#4A3B37] shadow-sm transition-colors hover:bg-[#4A3B37] hover:text-[#F5F0E8]"
+                >
+                  {item.label}
+                </a>
+              ))}
+
+              {/* Instagram */}
+              <Link
+                href="https://www.instagram.com/neuroconexion33"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram de Neuro Conexión"
+                className="group inline-flex items-center gap-2 rounded-full border border-[#D8CABB] bg-white/70 px-4 py-2 text-sm text-[#4A3B37] shadow-sm transition-colors hover:bg-[#4A3B37] hover:text-[#F5F0E8]"
               >
-                {item.label}
-              </a>
-            ))}
+                <span className="grid h-6 w-6 place-items-center rounded-full bg-[#4A3B37] text-[#F5F0E8] transition-colors group-hover:bg-[#F5F0E8] group-hover:text-[#4A3B37]">
+                  <Instagram className="h-3.5 w-3.5" />
+                </span>
+                <span className="font-medium">@neuroconexion33</span>
+              </Link>
 
-            {/* Instagram */}
-            <Link
-              href="https://www.instagram.com/neuroconexion33"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram de Neuro Conexión"
-              className="group inline-flex items-center gap-2 rounded-full border border-[#D8CABB] bg-white/70 px-4 py-2 text-sm text-[#4A3B37] shadow-sm transition-colors hover:bg-[#4A3B37] hover:text-[#F5F0E8]"
-            >
-              <span className="grid h-6 w-6 place-items-center rounded-full bg-[#4A3B37] text-[#F5F0E8] transition-colors group-hover:bg-[#F5F0E8] group-hover:text-[#4A3B37]">
-                <Instagram className="h-3.5 w-3.5" />
-              </span>
-              <span className="font-medium">@neuroconexion33</span>
-            </Link>
-
-            {/* WhatsApp */}
-            <Link
-              href="https://wa.me/543582446357"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="WhatsApp de Neuro Conexión"
-              className="group inline-flex items-center gap-2 rounded-full border border-[#D8CABB] bg-white/70 px-4 py-2 text-sm text-[#4A3B37] shadow-sm transition-colors hover:bg-green-600 hover:text-white"
-            >
-              <span className="grid h-6 w-6 place-items-center rounded-full bg-green-600 text-white transition-colors group-hover:bg-white group-hover:text-green-600">
-                <FaWhatsapp className="h-4 w-4" />
-              </span>
-              <span className="font-medium">WhatsApp</span>
-            </Link>
+              {/* WhatsApp */}
+              <Link
+                href="https://wa.me/543582446357"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp de Neuro Conexión"
+                className="group inline-flex items-center gap-2 rounded-full border border-[#D8CABB] bg-white/70 px-4 py-2 text-sm text-[#4A3B37] shadow-sm transition-colors hover:bg-green-600 hover:text-white"
+              >
+                <span className="grid h-6 w-6 place-items-center rounded-full bg-green-600 text-white transition-colors group-hover:bg-white group-hover:text-green-600">
+                  <FaWhatsapp className="h-4 w-4" />
+                </span>
+                <span className="font-medium">WhatsApp</span>
+              </Link>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </nav>
   );
