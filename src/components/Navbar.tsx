@@ -82,6 +82,7 @@ export default function Navbar() {
             className="rounded-full border border-[#D8CABB] bg-white/70 p-2 text-[#4A3B37] shadow-sm transition-colors hover:bg-[#4A3B37] hover:text-[#F5F0E8] md:hidden"
             onClick={() => setIsMenuOpen((prev) => !prev)}
             aria-label="Toggle menu"
+            aria-expanded={isMenuOpen}
           >
             {isMenuOpen ? (
               <X className="h-5 w-5" />
@@ -92,8 +93,14 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="flex flex-col items-center gap-3 pb-4 md:hidden">
+        <div
+          className={`md:hidden overflow-hidden transition-all duration-300 ${
+            isMenuOpen
+              ? "max-h-96 opacity-100"
+              : "max-h-0 opacity-0 pointer-events-none"
+          }`}
+        >
+          <div className="flex flex-col items-center gap-3 pb-4">
             {navItems.map((item) => (
               <a
                 key={item.href}
@@ -133,7 +140,7 @@ export default function Navbar() {
               <span className="font-medium">WhatsApp</span>
             </Link>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );
