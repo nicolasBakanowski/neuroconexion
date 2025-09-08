@@ -3,21 +3,36 @@
 
 import Image from "next/image";
 
+const WHATSAPP_BASE = "https://wa.me/5493582446357?text=";
+
 const cards = [
   {
-    title: "Psicoanálisis individual",
-    desc: "Personalizadas sesiones para resignificar y explorar.",
-    href: "#",
+    title: "Sesiones de Psicoanálisis",
+    desc: "Exploración profunda de emociones, pensamientos y vínculos, en un espacio seguro y confidencial.",
+    href: `${WHATSAPP_BASE}${encodeURIComponent(
+      "Hola, me gustaría saber más sobre Sesiones de Psicoanálisis"
+    )}`,
   },
   {
-    title: "Terapia de grupo (social)",
-    desc: "Fortalece el lazo conjunto en procesos terapéuticos.",
-    href: "#",
+    title: "Acompañamiento en Psicología Social",
+    desc: "Comprensión de dinámicas personales y grupales, y su impacto en tu vida cotidiana.",
+    href: `${WHATSAPP_BASE}${encodeURIComponent(
+      "Hola, me gustaría saber más sobre Acompañamiento en Psicología Social"
+    )}`,
   },
   {
-    title: "Talleres y charlas",
-    desc: "Actividades educativas sobre bienestar psico-emocional.",
-    href: "#",
+    title: "Herramientas de Autoconocimiento",
+    desc: "Estrategias y reflexiones prácticas para identificar patrones y fortalecer tu bienestar emocional.",
+    href: `${WHATSAPP_BASE}${encodeURIComponent(
+      "Hola, me gustaría saber más sobre Herramientas de Autoconocimiento"
+    )}`,
+  },
+  {
+    title: "Charlas y Talleres",
+    desc: "Espacios de aprendizaje y reflexión sobre vínculos, emociones y desarrollo personal.",
+    href: `${WHATSAPP_BASE}${encodeURIComponent(
+      "Hola, me gustaría saber más sobre Charlas y Talleres"
+    )}`,
   },
 ];
 
@@ -29,7 +44,7 @@ export default function ServicesSection() {
           Servicios
         </h2>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {cards.map((c) => (
             <article
               key={c.title}
@@ -43,7 +58,7 @@ export default function ServicesSection() {
               {/* Icono /hero.png como placeholder */}
               <div
                 className="
-                  mb-4 inline-flex items-center justify-center
+                  mb-4 mx-auto flex items-center justify-center
                   h-12 w-12 rounded-full
                   ring-1 ring-[#E18A63]/40 bg-[#FFF8F3]
                 "
@@ -68,6 +83,8 @@ export default function ServicesSection() {
 
               <a
                 href={c.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="
                   text-[#8DA977] font-semibold text-sm
                   inline-flex items-center gap-2
