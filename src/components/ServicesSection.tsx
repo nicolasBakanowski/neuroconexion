@@ -9,6 +9,7 @@ const cards = [
   {
     title: "Sesiones de Psicoanálisis",
     desc: "Exploración profunda de emociones, pensamientos y vínculos, en un espacio seguro y confidencial.",
+    icon: "/psicoanalisis.png",
     href: `${WHATSAPP_BASE}${encodeURIComponent(
       "Hola, me gustaría saber más sobre Sesiones de Psicoanálisis"
     )}`,
@@ -16,6 +17,7 @@ const cards = [
   {
     title: "Acompañamiento en Psicología Social",
     desc: "Comprensión de dinámicas personales y grupales, y su impacto en tu vida cotidiana.",
+    icon: "/acompañamiento.png",
     href: `${WHATSAPP_BASE}${encodeURIComponent(
       "Hola, me gustaría saber más sobre Acompañamiento en Psicología Social"
     )}`,
@@ -23,6 +25,7 @@ const cards = [
   {
     title: "Herramientas de Autoconocimiento",
     desc: "Estrategias y reflexiones prácticas para identificar patrones y fortalecer tu bienestar emocional.",
+    icon: "/autoconocimiento.png",
     href: `${WHATSAPP_BASE}${encodeURIComponent(
       "Hola, me gustaría saber más sobre Herramientas de Autoconocimiento"
     )}`,
@@ -30,6 +33,7 @@ const cards = [
   {
     title: "Charlas y Talleres",
     desc: "Espacios de aprendizaje y reflexión sobre vínculos, emociones y desarrollo personal.",
+    icon: "/talleres.png",
     href: `${WHATSAPP_BASE}${encodeURIComponent(
       "Hola, me gustaría saber más sobre Charlas y Talleres"
     )}`,
@@ -53,23 +57,16 @@ export default function ServicesSection() {
                 rounded-2xl border border-[#E18A63]
                 shadow-[0_1px_0_0_rgba(0,0,0,0.03)]
                 transition-transform duration-200 hover:-translate-y-0.5
-                "
+              "
             >
-              {/* Icono /hero.png como placeholder */}
-              <div
-                className="
-                  mb-4 mx-auto flex items-center justify-center
-                  h-12 w-12 rounded-full
-                  ring-1 ring-[#E18A63]/40 bg-[#FFF8F3]
-                "
-              >
+              {/* Icono dinámico */}
+              <div className="mb-4 mx-auto flex items-center justify-center">
                 <Image
-                  src="/hero.png"
-                  alt="Icono de servicio"
-                  width={28}
-                  height={28}
+                  src={c.icon}
+                  alt={`Icono ${c.title}`}
+                  width={100}
+                  height={100}
                   className="object-contain"
-                  priority={false}
                 />
               </div>
 
@@ -100,7 +97,7 @@ export default function ServicesSection() {
                 />
               </a>
 
-              {/* borde suave interior como en tarjetas impresas */}
+              {/* borde interior */}
               <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-[#E18A63]/20" />
             </article>
           ))}
