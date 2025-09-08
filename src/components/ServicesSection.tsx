@@ -1,6 +1,7 @@
 // app/components/ServicesSection.tsx
 "use client";
 
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 const WHATSAPP_BASE = "https://wa.me/5493582446357?text=";
@@ -49,9 +50,13 @@ export default function ServicesSection() {
         </h2>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {cards.map((c) => (
-            <article
+          {cards.map((c, i) => (
+            <motion.article
               key={c.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.1 }}
               className="
                 group relative flex flex-col p-6 bg-white
                 rounded-2xl border border-[#E18A63]
@@ -99,7 +104,7 @@ export default function ServicesSection() {
 
               {/* borde interior */}
               <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-[#E18A63]/20" />
-            </article>
+            </motion.article>
           ))}
         </div>
       </div>
