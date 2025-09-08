@@ -41,7 +41,7 @@ export default function Navbar() {
 
             {/* WhatsApp */}
             <Link
-              href="https://wa.me/54358446357"
+              href="https://wa.me/543582446357"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp de Neuro Conexión"
