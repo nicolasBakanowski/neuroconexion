@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Instagram } from "lucide-react";
+import { Instagram, Menu, X } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+import { useState } from "react";
 
 const navItems = [
   { label: "Inicio", href: "#inicio" },
@@ -14,10 +15,12 @@ const navItems = [
 ];
 
 export default function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <nav className="sticky top-0 z-50 bg-[#F5F0E8]/80 backdrop-blur border-b border-[#E6D9CD]">
       <div className="mx-auto max-w-6xl px-4">
-        <div className="flex flex-col gap-2 py-2 md:flex-row md:items-center md:justify-between">
+        <div className="flex items-center justify-between py-2">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <Image
@@ -30,8 +33,8 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* Navigation */}
-          <div className="flex flex-wrap items-center gap-3">
+          {/* Desktop Navigation */}
+          <div className="hidden flex-wrap items-center gap-3 md:flex">
             {navItems.map((item) => (
               <a
                 key={item.href}
@@ -72,7 +75,65 @@ export default function Navbar() {
               <span className="hidden sm:inline font-medium">WhatsApp</span>
             </Link>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            type="button"
+            className="rounded-full border border-[#D8CABB] bg-white/70 p-2 text-[#4A3B37] shadow-sm transition-colors hover:bg-[#4A3B37] hover:text-[#F5F0E8] md:hidden"
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
+          </button>
         </div>
+
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="flex flex-col items-center gap-3 pb-4 md:hidden">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={() => setIsMenuOpen(false)}
+                className="w-full rounded-full border border-[#D8CABB] bg-white/70 px-4 py-1.5 text-center text-sm text-[#4A3B37] shadow-sm transition-colors hover:bg-[#4A3B37] hover:text-[#F5F0E8]"
+              >
+                {item.label}
+              </a>
+            ))}
+
+            <Link
+              href="https://www.instagram.com/neuroconexion33"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram de Neuro Conexión"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#D8CABB] bg-white/70 px-2.5 py-1.5 text-sm text-[#4A3B37] shadow-sm transition-colors hover:bg-[#4A3B37] hover:text-[#F5F0E8]"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <span className="grid h-6 w-6 place-items-center rounded-full bg-[#4A3B37] text-[#F5F0E8] transition-colors group-hover:bg-[#F5F0E8] group-hover:text-[#4A3B37]">
+                <Instagram className="h-3.5 w-3.5" />
+              </span>
+              <span className="font-medium">@neuroconexion33</span>
+            </Link>
+
+            <Link
+              href="https://wa.me/543582446357"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp de Neuro Conexión"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#D8CABB] bg-white/70 px-2.5 py-1.5 text-sm text-[#4A3B37] shadow-sm transition-colors hover:bg-green-600 hover:text-white"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <span className="grid h-6 w-6 place-items-center rounded-full bg-green-600 text-white transition-colors group-hover:bg-white group-hover:text-green-600">
+                <FaWhatsapp className="h-4 w-4" />
+              </span>
+              <span className="font-medium">WhatsApp</span>
+            </Link>
+          </div>
+        )}
       </div>
     </nav>
   );
