@@ -23,9 +23,10 @@ export default function Navbar() {
             <Image
               src="/logonav.png"
               alt="Neuro Conexión"
-              width={120}
-              height={450}
+              width={300}
+              height={200}
               priority
+              className="h-12 w-auto scale-230"
             />
           </Link>
 
@@ -76,4 +77,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
