@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -13,12 +12,14 @@ export default function HeroSection() {
             Acompañamiento profesional para que encuentres nuevas formas de
             comprender, conectar y transformar tu vida.
           </p>
-          <Link
-            href="/calendar"
+          <a
+            href="https://wa.me/5493582446357"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-[#8DA977] text-white px-6 py-3 rounded-md inline-block"
           >
             Agenda tu sesión
-          </Link>
+          </a>
         </div>
         <div className="justify-self-center">
           <Image src="/hero.png" alt="Ilustración" width={320} height={320} />
