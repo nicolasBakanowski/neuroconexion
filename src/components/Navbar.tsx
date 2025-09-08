@@ -26,7 +26,7 @@ export default function Navbar() {
               width={300}
               height={200}
               priority
-              className="h-12 w-auto scale-125"
+              className="h-12 w-auto scale-230"
             />
           </Link>
 
@@ -77,4 +77,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
