@@ -77,9 +77,10 @@ export default function Navbar() {
 
           {/* Mobile toggle */}
           <button
-            className="md:hidden p-2"
+            className="md:hidden p-2 text-[#4A3B37]"
             onClick={() => setOpen((prev) => !prev)}
             aria-label="Menu"
+            aria-expanded={open}
           >
             {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -88,7 +89,7 @@ export default function Navbar() {
         {/* Mobile menu */}
         <div
           className={`md:hidden overflow-hidden transition-all duration-300 ${
-            open ? "max-h-96" : "max-h-0"
+            open ? "max-h-screen" : "max-h-0"
           }`}
         >
           <div className="flex flex-col gap-3 py-4">
