@@ -2,102 +2,93 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="font-sans text-[#4A3B37] bg-[#F5F0E8]">
+      <section className="bg-[#F3E8E2] py-16 px-4">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h1 className="text-3xl md:text-5xl font-semibold leading-tight mb-4">
+              Psicología Social & Psicoanálisis para tu bienestar
+            </h1>
+            <p className="mb-6">
+              Acompañamiento profesional para que encuentres nuevas formas de comprender,
+              conectar y transformar tu vida.
+            </p>
+            <button className="bg-[#8DA977] text-white px-6 py-3 rounded-md">Agenda tu sesión</button>
+          </div>
+          <div className="justify-self-center">
+            <Image src="/hero.svg" alt="Ilustración" width={320} height={320} />
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      <section className="px-4 py-16">
+        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+          <div className="justify-self-center md:justify-self-start">
+            <Image src="/leaf.svg" alt="Hoja" width={180} height={180} />
+          </div>
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">Sobre mí</h2>
+            <p className="mb-4">Psicóloga Social y psicoanalista</p>
+            <ul className="space-y-2">
+              <li className="flex items-start"><span className="text-[#8DA977] mr-2">✔</span>Soy una psicóloga egresada con orientación psicoanalítica</li>
+              <li className="flex items-start"><span className="text-[#8DA977] mr-2">✔</span>Acompañamiento empático y personalizado</li>
+              <li className="flex items-start"><span className="text-[#8DA977] mr-2">✔</span>Transformación personal</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 py-16">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl font-semibold text-center mb-12">Servicios</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="p-6 border rounded-lg bg-white flex flex-col">
+              <h3 className="font-semibold mb-2">Psicoanálisis individual</h3>
+              <p className="text-sm mb-4 flex-1">Encuentros personalizados para acompañarte en tu proceso.</p>
+              <a className="text-[#8DA977] font-medium" href="#">Saber más</a>
+            </div>
+            <div className="p-6 border rounded-lg bg-white flex flex-col">
+              <h3 className="font-semibold mb-2">Terapia de grupo</h3>
+              <p className="text-sm mb-4 flex-1">Espacios grupales donde compartir y crear lazos saludables.</p>
+              <a className="text-[#8DA977] font-medium" href="#">Saber más</a>
+            </div>
+            <div className="p-6 border rounded-lg bg-white flex flex-col">
+              <h3 className="font-semibold mb-2">Talleres y charlas</h3>
+              <p className="text-sm mb-4 flex-1">Propuestas formativas para instituciones y organizaciones.</p>
+              <a className="text-[#8DA977] font-medium" href="#">Saber más</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#F3E8E2] px-4 py-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-semibold text-center mb-8">Testimonios</h2>
+          <div className="space-y-6">
+            <p className="italic">&quot;El espacio terapéutico me ayudó a encontrar nuevas miradas sobre mi historia&quot; — Ana</p>
+            <p className="italic">&quot;Logré conectar con mis emociones y mejorar mis vínculos&quot; — Luis</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 py-16">
+        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">Demos el primer paso juntos</h2>
+            <p className="mb-6">Completa el formulario y me pondré en contacto contigo a la brevedad.</p>
+            <form className="space-y-4">
+              <input type="text" placeholder="Nombre" className="w-full border px-3 py-2 rounded" />
+              <input type="email" placeholder="Email" className="w-full border px-3 py-2 rounded" />
+              <textarea placeholder="Mensaje" className="w-full border px-3 py-2 rounded" rows={4} />
+              <button type="submit" className="bg-[#8DA977] text-white px-6 py-3 rounded-md">Enviar</button>
+            </form>
+          </div>
+          <div className="hidden md:block justify-self-center">
+            <Image src="/leaf.svg" alt="Ilustración" width={200} height={200} />
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
+
