@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { FaBrain, FaComments, FaUsers, FaLock } from "react-icons/fa";
 
 export default function AboutSection() {
   return (
@@ -12,16 +13,20 @@ export default function AboutSection() {
           <p className="mb-4">Psicóloga Social y psicoanalista</p>
           <ul className="space-y-2">
             <li className="flex items-start">
-              <span className="text-[#8DA977] mr-2">✔</span>Soy una psicóloga
-              egresada con orientación psicoanalítica
+              <FaBrain className="text-[#8DA977] mr-2 mt-1" />
+              Acompaño procesos de autoconocimiento y reflexión.
             </li>
             <li className="flex items-start">
-              <span className="text-[#8DA977] mr-2">✔</span>Acompañamiento
-              empático y personalizado
+              <FaComments className="text-[#8DA977] mr-2 mt-1" />
+              Trabajo desde la palabra y la escucha para comprender emociones y vínculos.
             </li>
             <li className="flex items-start">
-              <span className="text-[#8DA977] mr-2">✔</span>Transformación
-              personal
+              <FaUsers className="text-[#8DA977] mr-2 mt-1" />
+              Integro psicoanálisis y psicología social para entender a la persona y su contexto.
+            </li>
+            <li className="flex items-start">
+              <FaLock className="text-[#8DA977] mr-2 mt-1" />
+              Brindo un espacio seguro y confidencial para explorar y avanzar con conciencia.
             </li>
           </ul>
         </div>
