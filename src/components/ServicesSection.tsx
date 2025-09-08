@@ -42,7 +42,7 @@ const cards = [
 
 export default function ServicesSection() {
   return (
-    <section className="px-4 py-16 bg-[#FBF6EF]">
+    <section id="servicios" className="px-4 py-16 bg-[#FBF6EF]">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-semibold text-center text-[#5C3A2E] mb-12">
           Servicios

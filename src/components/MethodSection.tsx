@@ -1,6 +1,6 @@
 export default function MethodSection() {
   return (
-    <section className="bg-[#F3E8E2] px-4 py-16">
+    <section id="metodo" className="bg-[#F3E8E2] px-4 py-16">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-2xl font-semibold text-center mb-8">
           Mi método de trabajo
