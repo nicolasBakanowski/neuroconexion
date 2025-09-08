@@ -16,6 +16,8 @@ const navItems = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const toggleMenu = () => setOpen((prev) => !prev);
+  const closeMenu = () => setOpen(false);
 
   return (
     <nav className="sticky top-0 z-50 bg-[#F5F0E8]/80 backdrop-blur border-b border-[#E6D9CD]">
@@ -78,7 +80,8 @@ export default function Navbar() {
           {/* Mobile toggle */}
           <button
             className="md:hidden p-2"
-            onClick={() => setOpen((prev) => !prev)}
+            onClick={toggleMenu}
+            onTouchStart={toggleMenu}
             aria-label="Menu"
           >
             {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -96,7 +99,8 @@ export default function Navbar() {
               <a
                 key={item.href}
                 href={item.href}
-                onClick={() => setOpen(false)}
+                onClick={closeMenu}
+                onTouchStart={closeMenu}
                 className="rounded-full border border-[#D8CABB] bg-white/70 px-4 py-2 text-sm text-[#4A3B37] shadow-sm transition-colors hover:bg-[#4A3B37] hover:text-[#F5F0E8]"
               >
                 {item.label}
@@ -109,6 +113,8 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram de Neuro Conexión"
+              onClick={closeMenu}
+              onTouchStart={closeMenu}
               className="group inline-flex items-center gap-2 rounded-full border border-[#D8CABB] bg-white/70 px-4 py-2 text-sm text-[#4A3B37] shadow-sm transition-colors hover:bg-[#4A3B37] hover:text-[#F5F0E8]"
             >
               <span className="grid h-6 w-6 place-items-center rounded-full bg-[#4A3B37] text-[#F5F0E8] transition-colors group-hover:bg-[#F5F0E8] group-hover:text-[#4A3B37]">
@@ -123,6 +129,8 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp de Neuro Conexión"
+              onClick={closeMenu}
+              onTouchStart={closeMenu}
               className="group inline-flex items-center gap-2 rounded-full border border-[#D8CABB] bg-white/70 px-4 py-2 text-sm text-[#4A3B37] shadow-sm transition-colors hover:bg-green-600 hover:text-white"
             >
               <span className="grid h-6 w-6 place-items-center rounded-full bg-green-600 text-white transition-colors group-hover:bg-white group-hover:text-green-600">
