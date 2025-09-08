@@ -13,7 +13,7 @@ export default function HeroSection() {
             comprender, conectar y transformar tu vida.
           </p>
           <a
-            href="https://wa.me/5493584379276"
+            href="https://wa.me/5493582446357"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#8DA977] text-white px-6 py-3 rounded-md inline-block"
